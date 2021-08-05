@@ -1,4 +1,9 @@
+require 'date'
+
 class Enigma
-  def initialize
+  def encrypt(message, key, date)
+  end
+
+  def decrypt(message, key, date)
   end
 end
