@@ -8,7 +8,7 @@ RSpec.describe Dateable do
   end
 
   it 'creates offset without existing date' do
-    expect(mock.create_offsets).to be_a(String)
+    expect(mock.create_offsets).to eq((Time.now.strftime('%d%m%y').to_i ** 2).to_s[-4..-1])
   end
 
   it 'gives each individual offset' do
