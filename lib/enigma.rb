@@ -1,7 +1,12 @@
+require './modules/dateable'
+
 class Enigma
-  def encrypt(message, key, date)
+  include Dateable
+
+  def encrypt(message, key = nil, date = nil)
+    create_offsets(date)
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key = nil, date = nil)
   end
 end
