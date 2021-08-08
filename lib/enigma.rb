@@ -7,8 +7,11 @@ class Enigma
 
   def encrypt(message, key = nil, date = nil)
     create_offsets(date)
+    create_keys(key)
   end
 
   def decrypt(message, key = nil, date = nil)
+    create_offsets(date)
+    create_keys(key)
   end
 end
