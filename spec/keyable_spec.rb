@@ -8,5 +8,6 @@ RSpec.describe Keyable do
   it 'creates key with user input' do
   end
 
-  it 'creates key without user input'
+  it 'creates key without user input' do
+  end
 end
