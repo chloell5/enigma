@@ -21,6 +21,7 @@ class Shift
     @shifts[:C] = (get_offset(2) + get_keys[2])
     @shifts[:D] = (get_offset(3) + get_keys[3])
     create_rotated_arrays
+    create_inverses
     @shifts
   end
 
