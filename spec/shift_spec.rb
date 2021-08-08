@@ -13,11 +13,11 @@ RSpec.describe Shift do
   end
 
   it 'creates_shifts' do
-    expect(@shift.create_shifts).to eq({
+    expect(@shift.create_shifts("02715", "040895")).to eq({
       A: 3,
       B: 27,
       C: 73,
       D: 20
       })
-  end  
+  end
 end
