@@ -7,6 +7,6 @@ module Offsetable
   end
 
   def get_offset(shift)
-    @offset[shift]
+    @offset[shift].to_i
   end
 end
