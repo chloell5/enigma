@@ -12,7 +12,7 @@ RSpec.describe Enigma do
     expect(@enigma).to be_a(Enigma)
   end
 
-  xit 'encrypts with key and date' do
+  it 'encrypts with key and date' do
     expect(@enigma.encrypt("hello world", "02715", "040895")).to eq({
       encryption: "keder ohulw",
       key: "02715",
