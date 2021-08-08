@@ -46,4 +46,27 @@ class Shift
   def rotated_array_d
     @shifts_d = @charset.rotate(@shifts[:D])
   end
+
+  def create_inverses
+    inverse_array_a
+    inverse_array_b
+    inverse_array_c
+    inverse_array_d
+  end
+
+  def inverse_array_a
+    @inverse_a = @charset.rotate(0 - @shifts[:A])
+  end
+
+  def inverse_array_b
+    @inverse_b = @charset.rotate(0 - @shifts[:B])
+  end
+
+  def inverse_array_c
+    @inverse_c = @charset.rotate(0 - @shifts[:C])
+  end
+
+  def inverse_array_d
+    @inverse_d = @charset.rotate(0 - @shifts[:D])
+  end
 end
