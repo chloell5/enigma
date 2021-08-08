@@ -7,6 +7,8 @@ class Shift
 
   def initialize
     @shifts = Hash.new(0)
+    @charset = ("a".."z").to_a
+    @charset << " "
   end
 
   def create_shifts(key, date)
@@ -16,6 +18,14 @@ class Shift
     @shifts[:B] = (get_offset(1) + get_keys[1])
     @shifts[:C] = (get_offset(2) + get_keys[2])
     @shifts[:D] = (get_offset(3) + get_keys[3])
+    create_rotated_arrays
     @shifts
+  end
+
+  def create_rotated_arrays
+    @shifts_a = @charset.rotate(@shifts[:A])
+    @shifts_b = @charset.rotate(@shifts[:B])
+    @shifts_c = @charset.rotate(@shifts[:C])
+    @shifts_d = @charset.rotate(@shifts[:D])
   end
 end
