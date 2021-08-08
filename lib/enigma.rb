@@ -1,7 +1,9 @@
-require './modules/dateable'
+require './modules/offsetable'
+require './modules/keyable'
 
 class Enigma
-  include Dateable
+  include Offsetable
+  include Keyable
 
   def encrypt(message, key = nil, date = nil)
     create_offsets(date)
