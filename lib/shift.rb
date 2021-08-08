@@ -23,9 +23,25 @@ class Shift
   end
 
   def create_rotated_arrays
+    rotated_array_a
+    rotated_array_b
+    rotated_array_c
+    rotated_array_d
+  end
+
+  def rotated_array_a
     @shifts_a = @charset.rotate(@shifts[:A])
+  end
+
+  def rotated_array_b
     @shifts_b = @charset.rotate(@shifts[:B])
+  end
+
+  def rotated_array_c
     @shifts_c = @charset.rotate(@shifts[:C])
+  end
+
+  def rotated_array_d
     @shifts_d = @charset.rotate(@shifts[:D])
   end
 end

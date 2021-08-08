@@ -21,9 +21,34 @@ RSpec.describe Shift do
       })
   end
 
-  it 'rotates arrays' do
+  it 'creates rotated arrays' do
     @shift.create_shifts("02715", "040895")
 
     expect(@shift.create_rotated_arrays).to eq(["u", "v", "w", "x", "y", "z", " ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"])
+  end
+
+
+  it 'rotates array a' do
+    @shift.create_shifts("02715", "040895")
+
+    expect(@shift.rotated_array_a).to eq(["d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", "a", "b", "c"])
+  end
+
+  it 'rotates array b' do
+    @shift.create_shifts("02715", "040895")
+
+    expect(@shift.rotated_array_b).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
+  end
+
+  it 'rotates array c' do
+    @shift.create_shifts("02715", "040895")
+
+    expect(@shift.rotated_array_c).to eq(["t", "u", "v", "w", "x", "y", "z", " ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"])
+  end
+
+  it 'rotates array d' do
+    @shift.create_shifts("02715", "040895")
+
+    expect(@shift.rotated_array_d).to eq(["u", "v", "w", "x", "y", "z", " ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"])
   end
 end
