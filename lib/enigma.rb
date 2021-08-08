@@ -16,20 +16,18 @@ class Enigma
 
   def iterate(message)
     changed_message = []
-    message.split("").each do |char|
-      if message.index(char).to_i % 4 == 0
-        char = @shift.rotated_array_a[@shift.charset.index(char)]
-        changed_message << char
-      elsif message.index(char).to_i % 4 == 1
-        char = @shift.rotated_array_b[@shift.charset.index(char)]
-        changed_message << char
-      elsif message.index(char).to_i % 4 == 2
-        char = @shift.rotated_array_c[@shift.charset.index(char)]
-        changed_message << char
+    i = 0
+    message.each_char do |char|
+      if i % 4 == 0
+        changed_message[i] = @shift.rotated_array_a[@shift.charset.index(char)]
+      elsif i % 4 == 1
+        changed_message[i] = @shift.rotated_array_b[@shift.charset.index(char)]
+      elsif i % 4 == 2
+        changed_message[i] = @shift.rotated_array_c[@shift.charset.index(char)]
       else
-        char = @shift.rotated_array_d[@shift.charset.index(char)]
-        changed_message << char
+        changed_message[i] = @shift.rotated_array_d[@shift.charset.index(char)]
       end
+      i += 1
     end
     changed_message.join
   end
