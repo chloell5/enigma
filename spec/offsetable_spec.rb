@@ -1,7 +1,9 @@
-require './modules/dateable'
+require './modules/offsetable'
+require 'simplecov'
+SimpleCov.start
 
-RSpec.describe Dateable do
-  let(:mock) {Class.new {extend Dateable}}
+RSpec.describe Offsetable do
+  let(:mock) {Class.new {extend Offsetable}}
 
   it 'creates offset with existing date' do
     expect(mock.create_offsets(103121)).to eq("0641")

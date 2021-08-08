@@ -1,4 +1,4 @@
-module Dateable
+module Offsetable
   def create_offsets(date = nil)
     date    = Time.now.strftime('%d%m%y').to_i if date.nil?
     square  = date ** 2
