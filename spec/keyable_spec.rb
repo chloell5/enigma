@@ -5,9 +5,12 @@ SimpleCov.start
 RSpec.describe Keyable do
   let(:mock) {Class.new {extend Keyable}}
 
-  it 'creates key with user input' do
+  xit 'creates key with user input' do
   end
 
-  it 'creates key without user input' do
+  xit 'creates key without user input' do
+  end
+
+  xit 'gives each individual key' do
   end
 end
