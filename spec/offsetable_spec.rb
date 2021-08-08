@@ -6,6 +6,7 @@ RSpec.describe Offsetable do
   let(:mock) {Class.new {extend Offsetable}}
 
   it 'creates offset with existing date' do
+    expect(mock.create_offsets("103121")).to eq("0641")
     expect(mock.create_offsets(103121)).to eq("0641")
   end
 
@@ -14,7 +15,7 @@ RSpec.describe Offsetable do
   end
 
   it 'gives each individual offset' do
-    mock.create_offsets(103121)
+    mock.create_offsets("103121")
 
     expect(mock.get_offset(0)).to eq("0")
     expect(mock.get_offset(1)).to eq("6")
