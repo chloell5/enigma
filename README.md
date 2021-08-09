@@ -17,3 +17,7 @@ Everything is spaced and intented properly, and everything is named as to accura
 ### TDD
 
 100% Test coverage. Mocks are used to test out modules. Some tests ended up written strangely, but still end up testing what they need to. I had difficulty modeling tests for running the current date, but found my way through it. (Meets Expectations)
+
+## Overall
+
+I feel like I met, but did not exceed the expectations for this project. Without time constraints, I would have enjoyed pushing further to making this a truly amazing program, and will hopefully continue to work on it in the future. I know a lot of my methods could be done in an easier fashion, or perhaps more concisely, but overall I am content with where it is as far as passing parameters.
