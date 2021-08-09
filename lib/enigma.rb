@@ -6,7 +6,7 @@ class Enigma
     @shift = Shift.new
     @shift.create_shifts(key, date)
     encrypted[:encryption] = iterate(message)
-    encrypted[:key] = key
+    encrypted[:key] = @shift.key
     encrypted[:date] = date
     encrypted
   end
@@ -16,7 +16,7 @@ class Enigma
     @shift = Shift.new
     @shift.create_shifts(key, date)
     decrypted[:decryption] = inverse_iterate(message)
-    decrypted[:key] = key
+    decrypted[:key] = @shift.key
     decrypted[:date] = date
     decrypted
   end

@@ -29,33 +29,24 @@ RSpec.describe Enigma do
   end
 
   it 'encrypts with just a key' do
-    expect(@enigma.encrypt("hello world", "02715")).to be_a(Hash)
-    # stub in a test
-    # {
-    #   encryption: nil,
-    #   key: "02715",
-    #   date: Time.now.strftime('%d%m%y')
-    #   }
+    encrypted = @enigma.encrypt("hello world", "02715")
+
+    expect((@enigma.decrypt(encrypted[:encryption], "02715"))[:decryption]).to eq("hello world")
+    expect((@enigma.decrypt(encrypted[:encryption], "02715"))[:key]).to eq("02715")
   end
 
   it 'decrypts with just a key' do
     encrypted = @enigma.encrypt("hello world", "02715")
-    expect(@enigma.decrypt(encrypted[:encryption], "02715")).to be_a(Hash)
-    # stub in a test
-    # {
-    #   decryption: nil,#dunno, change this
-    #   key: "02715",
-    #   date: Time.now.strftime('%d%m%y')
-    #   }
+    expect(@enigma.decrypt(encrypted[:encryption], "02715")).to eq({
+      decryption: "hello world",
+      key: "02715",
+      date: nil
+      })
   end
 
   it 'encrypts with no key or date' do
-    expect(@enigma.encrypt("hello world")).to be_a(Hash)
-      # stub in a test
-      # {
-      # encryption: nil,#dunno, change this
-      # key: "02715",
-      # date: Time.now.strftime('%d%m%y')
-      # }
+    encrypted = @enigma.encrypt("hello world")
+
+    expect((@enigma.decrypt(encrypted[:encryption], encrypted[:key]))[:decryption]).to eq("hello world")
   end
 end
