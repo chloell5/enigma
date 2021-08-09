@@ -5,7 +5,8 @@ class Shift
   include Offsetable
   include Keyable
 
-  attr_reader :charset
+  attr_reader :charset,
+              :key
 
   def initialize
     @shifts = Hash.new(0)
