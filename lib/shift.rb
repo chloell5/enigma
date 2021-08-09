@@ -12,7 +12,7 @@ class Shift
     @charset = ("a".."z").to_a
     @charset << " "
   end
-
+ 
   def create_shifts(key, date)
     create_keys(key)
     create_offsets(date)

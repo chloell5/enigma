@@ -2,23 +2,23 @@ require './shift'
 
 class Enigma
   def encrypt(message, key = nil, date = nil)
-    encrypted_hash = Hash.new(0)
+    encrypted = Hash.new(0)
     @shift = Shift.new
     @shift.create_shifts(key, date)
-    encrypted_hash[:encryption] = iterate(message)
-    encrypted_hash[:key] = key
-    encrypted_hash[:date] = date
-    encrypted_hash
+    encrypted[:encryption] = iterate(message)
+    encrypted[:key] = key
+    encrypted[:date] = date
+    encrypted
   end
 
   def decrypt(message, key = nil, date = nil)
-    decrypted_hash = Hash.new(0)
+    decrypted = Hash.new(0)
     @shift = Shift.new
     @shift.create_shifts(key, date)
-    decrypted_hash[:decryption] = inverse_iterate(message)
-    decrypted_hash[:key] = key
-    decrypted_hash[:date] = date
-    decrypted_hash
+    decrypted[:decryption] = inverse_iterate(message)
+    decrypted[:key] = key
+    decrypted[:date] = date
+    decrypted
   end
 
   def iterate(message)

@@ -39,7 +39,8 @@ RSpec.describe Enigma do
   end
 
   it 'decrypts with just a key' do
-    expect(@enigma.decrypt("hello world", "02715")).to be_a(Hash)
+    encrypted = @enigma.encrypt("hello world", "02715")
+    expect(@enigma.decrypt(encrypted[:encryption], "02715")).to be_a(Hash)
     # stub in a test
     # {
     #   decryption: nil,#dunno, change this
@@ -48,21 +49,11 @@ RSpec.describe Enigma do
     #   }
   end
 
-  it 'encrypts with just a key' do
-    expect(@enigma.encrypt("hello world", "02715")).to be_a(Hash)
+  it 'encrypts with no key or date' do
+    expect(@enigma.encrypt("hello world")).to be_a(Hash)
       # stub in a test
       # {
       # encryption: nil,#dunno, change this
-      # key: "02715",
-      # date: Time.now.strftime('%d%m%y')
-      # }
-  end
-
-  it 'decrypts with just a key' do
-    expect(@enigma.decrypt("hello world", "02715")).to be_a(Hash)
-      # stub in a test
-      # {
-      # decryption: nil,#dunno, change this
       # key: "02715",
       # date: Time.now.strftime('%d%m%y')
       # }
