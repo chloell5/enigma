@@ -26,16 +26,16 @@ class Enigma
     i = 0
     message.each_char do |char|
       char.downcase!
-        if @shift.charset.include? char
-          changed_message[i] = @shift.rotated_array_a[@shift.charset.index(char)]
-          changed_message[i] = @shift.rotated_array_b[@shift.charset.index(char)] if i % 4 == 1
-          changed_message[i] = @shift.rotated_array_c[@shift.charset.index(char)] if i % 4 == 2
-          changed_message[i] = @shift.rotated_array_d[@shift.charset.index(char)] if i % 4 == 3
-        else
-          changed_message[i] = char
-        end
-        i += 1
+      if @shift.charset.include? char
+        changed_message[i] = @shift.rotated_array_a[@shift.charset.index(char)]
+        changed_message[i] = @shift.rotated_array_b[@shift.charset.index(char)] if i % 4 == 1
+        changed_message[i] = @shift.rotated_array_c[@shift.charset.index(char)] if i % 4 == 2
+        changed_message[i] = @shift.rotated_array_d[@shift.charset.index(char)] if i % 4 == 3
+      else
+        changed_message[i] = char
       end
+      i += 1
+    end
     changed_message.join
   end
 

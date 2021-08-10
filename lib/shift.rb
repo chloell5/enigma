@@ -10,8 +10,8 @@ class Shift
 
   def initialize
     @shifts = Hash.new(0)
-    @charset = ("a".."z").to_a
-    @charset << " "
+    @charset = ('a'..'z').to_a
+    @charset << ' '
   end
 
   def create_shifts(key, date)
